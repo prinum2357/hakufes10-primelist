@@ -18,6 +18,7 @@
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link" href="https://www.hakubutufes.info">博ふぇすTOP</a></li>
                     <li class="nav-item"><a class="nav-link" href="http://hakubutufesshoukai.blog.fc2.com/blog-entry-3123.html">素数大富豪のページ</a></li>
+                    <li class="nav-item"><button id="hashtag-copy-button">ハッシュタグのコピー</button></li>
                 </ul>
             </div>
         </div>
@@ -34,29 +35,26 @@
     <img src="./img/hanabusan03.jpg" class="d-block w-100">
     <img src="./img/hanabusan04.jpg" class="d-block w-100">
 
-    <!-- <div id="carouselExample" class="carousel slide">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-            <img src="./img/hanabusan01.jpg" class="d-block w-50">
-        </div>
-            <div class="carousel-item">
-            <img src="./img/hanabusan02.jpg" class="d-block w-50">
-        </div>
-            <div class="carousel-item">
-            <img src="./img/hanabusan03.jpg" class="d-block w-50">
-            </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button> -->
     </div>
+
     <script src="https://prinum2357.github.io/hakufes10-primelist/src/bootstrap.min.js"></script>
     <script id="bs-live-reload" data-sseport="57392" data-lastchange="1721389711297" src="/js/livereload.js"></script>
+    <script>
+        const hashtagCopyBotton = document.getElementById("hashtag-copy-button");
+        const hashtag = "#博物ふぇす #素数大富豪"
+        hashtagCopyBotton.addEventListener("click", () => {
+            if (!navigator.clipboard) {
+                alert("このブラウザは対応していません");
+                return;
+            }
+
+            navigator.clipboard.writeText(hashtag).then(
+                () => {
+                alert("#博物ふぇす #素数大富豪 をコピーしました\nSNSに遊んだ感想を投稿してね！");
+                });
+            }
+        );
+    </script>
 </body>
 
 </html>
